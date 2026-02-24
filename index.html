@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maison Claire Débarras — Débarras en Île-de-France</title>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -1367,33 +1368,33 @@ footer {
           </div>
         </div>
       </div>
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Merci ! Votre demande de devis a été envoyée. Nous vous recontactons sous 24h.');">
+      <form class="contact-form" id="devisForm">
         <h3>Devis gratuit</h3>
         <p>Sans engagement — Réponse sous 24h</p>
         <div class="form-row">
           <div class="form-group">
             <label>Nom *</label>
-            <input type="text" placeholder="Votre nom" required>
+            <input type="text" name="nom" placeholder="Votre nom" required>
           </div>
           <div class="form-group">
             <label>Prénom *</label>
-            <input type="text" placeholder="Votre prénom" required>
+            <input type="text" name="prenom" placeholder="Votre prénom" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label>Téléphone *</label>
-            <input type="tel" placeholder="06 00 00 00 00" required>
+            <input type="tel" name="telephone" placeholder="06 00 00 00 00" required>
           </div>
           <div class="form-group">
             <label>Email</label>
-            <input type="email" placeholder="votre@email.fr">
+            <input type="email" name="email" placeholder="votre@email.fr">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label>Département *</label>
-            <select required>
+            <select name="departement" required>
               <option value="">Sélectionnez...</option>
               <option>75 — Paris</option>
               <option>77 — Seine-et-Marne</option>
@@ -1407,7 +1408,7 @@ footer {
           </div>
           <div class="form-group">
             <label>Type de bien *</label>
-            <select required>
+            <select name="type_bien" required>
               <option value="">Sélectionnez...</option>
               <option>Appartement</option>
               <option>Maison</option>
@@ -1420,9 +1421,10 @@ footer {
         </div>
         <div class="form-group">
           <label>Description de votre besoin</label>
-          <textarea placeholder="Décrivez votre situation : type de bien, volume estimé, contraintes d'accès, date souhaitée…"></textarea>
+          <textarea name="description" placeholder="Décrivez votre situation : type de bien, volume estimé, contraintes d'accès, date souhaitée…"></textarea>
         </div>
-        <button type="submit" class="form-submit">Envoyer ma demande de devis →</button>
+        <button type="submit" class="form-submit" id="submitBtn">Envoyer ma demande de devis →</button>
+        <div id="formMessage" style="display:none; margin-top: 1rem; padding: 1rem; border-radius: 8px; text-align: center; font-weight: 500;"></div>
         <p class="form-free">✓ <strong>100% gratuit</strong> — Sans engagement — Réponse garantie sous 24h</p>
       </form>
     </div>
@@ -1517,6 +1519,101 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       document.getElementById('navLinks').classList.remove('open');
     }
   });
+});
+
+// ============================================
+// FORMULAIRE DE CONTACT — EmailJS + Google Sheets
+// ============================================
+
+// ⚠️ CONFIGURATION — Remplace ces valeurs par les tiennes
+const EMAILJS_PUBLIC_KEY = 'x4F1PFaRfSkZXVVv5';     // Ta clé publique EmailJS
+const EMAILJS_SERVICE_ID = 'service_vi7js7g';     // Ton Service ID EmailJS
+const EMAILJS_TEMPLATE_ID = 'template_l1ykr6m';    // Ton Template ID EmailJS (notification)
+const EMAILJS_TEMPLATE_CLIENT = 'template_6zmd6me'; // Template confirmation client
+const GOOGLE_SHEETS_URL = 'A_REMPLACER';       // URL de ton Google Apps Script
+
+// Initialisation EmailJS
+emailjs.init(EMAILJS_PUBLIC_KEY);
+
+// Gestion du formulaire
+document.getElementById('devisForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const btn = document.getElementById('submitBtn');
+  const msg = document.getElementById('formMessage');
+  const form = this;
+
+  // Récupération des données
+  const data = {
+    nom: form.nom.value.trim(),
+    prenom: form.prenom.value.trim(),
+    telephone: form.telephone.value.trim(),
+    email: form.email.value.trim() || 'Non renseigné',
+    departement: form.departement.value,
+    type_bien: form.type_bien.value,
+    description: form.description.value.trim() || 'Aucune description',
+    date: new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })
+  };
+
+  // État loading
+  btn.disabled = true;
+  btn.textContent = 'Envoi en cours...';
+  msg.style.display = 'none';
+
+  let emailOk = false;
+  let sheetsOk = false;
+
+  // 1) Envoi EmailJS — notification + confirmation client
+  try {
+    const templateData = {
+      from_name: data.prenom + ' ' + data.nom,
+      telephone: data.telephone,
+      email: data.email,
+      departement: data.departement,
+      type_bien: data.type_bien,
+      description: data.description,
+      date: data.date
+    };
+    // Email notification (pour ton cousin)
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateData);
+    // Email confirmation (pour le client, seulement s'il a donné son email)
+    if (data.email !== 'Non renseigné') {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CLIENT, templateData);
+    }
+    emailOk = true;
+  } catch (err) {
+    console.error('EmailJS error:', err);
+  }
+
+  // 2) Envoi Google Sheets
+  try {
+    await fetch(GOOGLE_SHEETS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    sheetsOk = true;
+  } catch (err) {
+    console.error('Google Sheets error:', err);
+  }
+
+  // Résultat
+  if (emailOk || sheetsOk) {
+    msg.style.display = 'block';
+    msg.style.background = '#e8f5e9';
+    msg.style.color = '#2e7d32';
+    msg.innerHTML = '✓ <strong>Demande envoyée avec succès !</strong><br>Nous vous recontactons sous 24h.';
+    form.reset();
+  } else {
+    msg.style.display = 'block';
+    msg.style.background = '#fce4ec';
+    msg.style.color = '#c62828';
+    msg.innerHTML = '✗ <strong>Erreur lors de l\'envoi.</strong><br>Veuillez nous appeler au <a href="tel:+33786781055" style="color:#c62828;font-weight:700">07 86 78 10 55</a>';
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Envoyer ma demande de devis →';
 });
 </script>
 

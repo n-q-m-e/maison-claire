@@ -1,0 +1,109 @@
+<!-- EmailJS Template ID: template_l1ykr6m -->
+<!-- Template Name: Notification devis -->
+<!-- Subject: 🏠 Nouvelle demande de devis — {{from_name}} -->
+<!-- To Email: maisonclairedebarras@gmail.com -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap');
+  </style>
+</head>
+<body style="margin:0; padding:0; background-color:#ffffff; font-family:'Outfit', 'Segoe UI', Tahoma, sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#ffffff; padding:8px 0;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color:#ffffff; border-radius:12px; overflow:hidden; border:1px solid #e8e0d4;">
+          <!-- HEADER -->
+          <tr>
+            <td style="background-color:#f3efe8; padding:1px 40px 30px; text-align:center;">
+              <div style="height:115px; overflow:hidden; margin:0 auto;">
+                <img src="https://i.ibb.co/WN09rGF2/logo-sans-fond.png" alt="Maison Claire" width="160" style="margin-top:-5px;">
+              </div>
+              <h1 style="font-family:'Cormorant Garamond', Georgia, serif; color:#1a1a1a; font-size:32px; margin:0; font-weight:600; letter-spacing:1px;">Maison Claire</h1>
+              <p style="font-family:'Outfit', 'Segoe UI', sans-serif; color:#b8965a; font-size:12px; margin:2px 0 0; letter-spacing:3px; text-transform:uppercase; font-weight:500;">D&#233;barras en &#206;le-de-France</p>
+            </td>
+          </tr>
+          <!-- GOLD SEPARATOR -->
+          <tr>
+            <td style="padding:0 60px;">
+              <hr style="border:none; height:2px; background:linear-gradient(to right, transparent, #b8965a, transparent); margin:0;">
+            </td>
+          </tr>
+          <!-- TITLE -->
+          <tr>
+            <td style="padding:18px 40px 10px; text-align:center;">
+              <h2 style="font-family:'Cormorant Garamond', Georgia, serif; color:#1a1a1a; font-size:22px; margin:0; font-weight:500;">Nouvelle demande de devis</h2>
+              <p style="font-family:'Outfit', 'Segoe UI', sans-serif; color:#6b6b6b; font-size:13px; margin:4px 0 0;">Re&#231;ue le {{date}}</p>
+            </td>
+          </tr>
+          <!-- CLIENT INFO -->
+          <tr>
+            <td style="padding:14px 40px;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding:14px 18px; background-color:#faf8f5; border-radius:8px;">
+                    <p style="margin:0 0 4px; font-family:'Outfit', sans-serif; font-size:11px; color:#b8965a; text-transform:uppercase; letter-spacing:1.5px; font-weight:600;">Client</p>
+                    <p style="margin:0; font-family:'Cormorant Garamond', Georgia, serif; font-size:20px; color:#1a1a1a; font-weight:600;">{{from_name}}</p>
+                  </td>
+                </tr>
+                <tr><td style="height:8px;"></td></tr>
+                <tr>
+                  <td style="padding:14px 18px; background-color:#faf8f5; border-radius:8px;">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="50%">
+                          <p style="margin:0 0 4px; font-family:'Outfit', sans-serif; font-size:11px; color:#b8965a; text-transform:uppercase; letter-spacing:1.5px; font-weight:600;">T&#233;l&#233;phone</p>
+                          <p style="margin:0; font-family:'Outfit', sans-serif; font-size:16px; color:#1a1a1a; font-weight:600;">{{telephone}}</p>
+                        </td>
+                        <td width="50%">
+                          <p style="margin:0 0 4px; font-family:'Outfit', sans-serif; font-size:11px; color:#b8965a; text-transform:uppercase; letter-spacing:1.5px; font-weight:600;">Email</p>
+                          <p style="margin:0; font-family:'Outfit', sans-serif; font-size:15px; color:#1a1a1a;">{{email}}</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr><td style="height:8px;"></td></tr>
+                <tr>
+                  <td style="padding:14px 18px; background-color:#faf8f5; border-radius:8px;">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="50%">
+                          <p style="margin:0 0 4px; font-family:'Outfit', sans-serif; font-size:11px; color:#b8965a; text-transform:uppercase; letter-spacing:1.5px; font-weight:600;">D&#233;partement</p>
+                          <p style="margin:0; font-family:'Outfit', sans-serif; font-size:15px; color:#1a1a1a;">{{departement}}</p>
+                        </td>
+                        <td width="50%">
+                          <p style="margin:0 0 4px; font-family:'Outfit', sans-serif; font-size:11px; color:#b8965a; text-transform:uppercase; letter-spacing:1.5px; font-weight:600;">Type de bien</p>
+                          <p style="margin:0; font-family:'Outfit', sans-serif; font-size:15px; color:#1a1a1a;">{{type_bien}}</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- DESCRIPTION -->
+          <tr>
+            <td style="padding:0 40px 20px;">
+              <div style="padding:16px 18px; background-color:#faf8f5; border-left:3px solid #b8965a; border-radius:0 8px 8px 0;">
+                <p style="margin:0 0 6px; font-family:'Outfit', sans-serif; font-size:11px; color:#b8965a; text-transform:uppercase; letter-spacing:1.5px; font-weight:600;">Description du besoin</p>
+                <p style="margin:0; font-family:'Outfit', sans-serif; font-size:14px; color:#333333; line-height:1.7;">{{description}}</p>
+              </div>
+            </td>
+          </tr>
+          <!-- FOOTER -->
+          <tr>
+            <td style="background-color:#1a1a1a; padding:18px 40px; text-align:center;">
+              <p style="margin:0; font-family:'Outfit', sans-serif; color:#888888; font-size:12px;">Maison Claire D&#233;barras &#8212; &#206;le-de-France</p>
+              <p style="margin:4px 0 0; font-family:'Outfit', sans-serif; color:#b8965a; font-size:13px; font-weight:500;">07 86 78 10 55</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
