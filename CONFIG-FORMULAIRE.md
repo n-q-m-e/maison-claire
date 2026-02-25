@@ -79,8 +79,8 @@ const GOOGLE_SHEETS_URL = 'A_REMPLACER';             // À configurer
 
 | Image | URL directe |
 |---|---|
-| Logo sans fond (PNG) | `https://i.ibb.co/WN09rGF2/logo-sans-fond.png` |
-| Logo complet (JPG) | `https://i.ibb.co/sdV4SqF1/logo.jpg` |
+| Logo sans fond (PNG) | `https://www.maisonclairedebarras.com/images/logo-sans-fond.png` |
+| Logo complet (JPG) | `https://www.maisonclairedebarras.com/images/logo.jpg` |
 
 ---
 
