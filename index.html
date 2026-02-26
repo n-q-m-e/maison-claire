@@ -4,11 +4,75 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maison Claire Débarras — Débarras en Île-de-France</title>
+<meta name="description" content="Débarras appartement, maison, cave en Val-de-Marne (94) et Île-de-France. Devis gratuit sous 24h. Intervention rapide, respectueuse et éco-responsable.">
+<meta name="keywords" content="débarras, débarras appartement, débarras maison, débarras cave, débarras succession, Val-de-Marne, 94, Île-de-France, L'Haÿ-les-Roses, devis gratuit">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Maison Claire Débarras — Débarras en Île-de-France">
+<meta property="og:description" content="Débarras appartement, maison, cave en Val-de-Marne (94) et Île-de-France. Devis gratuit sous 24h.">
+<meta property="og:image" content="https://www.maisonclairedebarras.com/images/logo.jpg">
+<meta property="og:url" content="https://www.maisonclairedebarras.com">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Maison Claire Débarras">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maison Claire Débarras — Débarras en Île-de-France">
+<meta name="twitter:description" content="Débarras appartement, maison, cave en Val-de-Marne (94). Devis gratuit sous 24h.">
+<meta name="twitter:image" content="https://www.maisonclairedebarras.com/images/logo.jpg">
+<!-- Canonical -->
+<link rel="canonical" href="https://www.maisonclairedebarras.com/">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<!-- Schema JSON-LD : LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Maison Claire Débarras",
+  "description": "Service de débarras professionnel en Val-de-Marne et Île-de-France. Appartements, maisons, caves, greniers, successions.",
+  "url": "https://www.maisonclairedebarras.com",
+  "telephone": "+33786781055",
+  "email": "maisonclairedebarras@gmail.com",
+  "image": "https://www.maisonclairedebarras.com/images/logo.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "L'Haÿ-les-Roses",
+    "addressRegion": "Val-de-Marne",
+    "postalCode": "94240",
+    "addressCountry": "FR"
+  },
+  "areaServed": [
+    {"@type": "AdministrativeArea", "name": "Val-de-Marne"},
+    {"@type": "AdministrativeArea", "name": "Hauts-de-Seine"},
+    {"@type": "City", "name": "Paris"}
+  ],
+  "priceRange": "€€",
+  "openingHours": "Mo-Sa 08:00-19:00",
+  "sameAs": []
+}
+</script>
+<!-- Schema JSON-LD : Service -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Débarras",
+  "provider": {"@type": "LocalBusiness", "name": "Maison Claire Débarras"},
+  "areaServed": {"@type": "AdministrativeArea", "name": "Île-de-France"},
+  "description": "Débarras d'appartements, maisons, caves, greniers, locaux professionnels. Débarras succession et nettoyage Diogène.",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "EUR",
+    "price": "0",
+    "description": "Devis gratuit sous 24h"
+  }
+}
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" as="style">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -916,6 +980,71 @@ footer {
   .trust-inner { flex-direction: column; gap: 16px; }
   .floating-cta span.cta-label { display: none; }
 }
+
+/* ─── FAQ ACCORDION ─── */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.faq-item {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: box-shadow 0.3s;
+}
+.faq-item:hover { box-shadow: var(--shadow-lg); }
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  gap: 16px;
+  transition: color 0.3s;
+}
+.faq-question:hover { color: var(--gold); }
+.faq-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--cream);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  transition: transform 0.3s, background 0.3s;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+  background: var(--gold);
+  color: #fff;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+.faq-answer-inner {
+  padding: 0 28px 24px;
+  color: var(--text-light);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
 </style>
 </head>
 <body>
@@ -944,6 +1073,7 @@ footer {
       <li><a href="#entreprise">Notre entreprise</a></li>
       <li><a href="#process">Processus</a></li>
       <li><a href="#avis">Avis</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact" class="nav-cta">Devis Gratuit</a></li>
     </ul>
     <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
@@ -1027,7 +1157,7 @@ footer {
     <div class="services-grid">
       <div class="service-card reveal">
         <div class="service-img">
-          <img src="images/photos/vitaly-gariev-wS40ELZROLE-unsplash.jpg" alt="Débarras maison — cartons et déménagement">
+          <img src="images/photos/vitaly-gariev-wS40ELZROLE-unsplash.jpg" alt="Débarras maison — cartons et déménagement en Île-de-France" loading="lazy">
         </div>
         <div class="service-body">
           <span class="service-tag">Résidentiel</span>
@@ -1037,7 +1167,7 @@ footer {
       </div>
       <div class="service-card reveal">
         <div class="service-img">
-          <img src="images/photos/alicia-christin-gerald-bV7WI-AeiTA-unsplash.jpg" alt="Débarras appartement — cartons empilés">
+          <img src="images/photos/alicia-christin-gerald-bV7WI-AeiTA-unsplash.jpg" alt="Débarras appartement — intervention professionnelle Val-de-Marne" loading="lazy">
         </div>
         <div class="service-body">
           <span class="service-tag">Appartement</span>
@@ -1047,7 +1177,7 @@ footer {
       </div>
       <div class="service-card reveal">
         <div class="service-img">
-          <img src="images/photos/everdrop-gmbh-SqOMDOQb3ws-unsplash.jpg" alt="Nettoyage après débarras">
+          <img src="images/photos/everdrop-gmbh-SqOMDOQb3ws-unsplash.jpg" alt="Nettoyage après débarras — remise en état appartement" loading="lazy">
         </div>
         <div class="service-body">
           <span class="service-tag">Nettoyage</span>
@@ -1057,7 +1187,7 @@ footer {
       </div>
       <div class="service-card reveal">
         <div class="service-img">
-          <img src="images/photos/michal-balog-GVMCvjF6tuU-unsplash.jpg" alt="Cave et grenier — sous-sol à débarrasser">
+          <img src="images/photos/michal-balog-GVMCvjF6tuU-unsplash.jpg" alt="Débarras cave et grenier — sous-sol encombré avant intervention" loading="lazy">
         </div>
         <div class="service-body">
           <span class="service-tag">Caves & Greniers</span>
@@ -1067,7 +1197,7 @@ footer {
       </div>
       <div class="service-card reveal">
         <div class="service-img">
-          <img src="images/photos/kristina-kutlesa-fNlWbRCI9Rk-unsplash.jpg" alt="Succession — intérieur ancien à débarrasser">
+          <img src="images/photos/kristina-kutlesa-fNlWbRCI9Rk-unsplash.jpg" alt="Débarras succession — intérieur ancien à vider avec respect" loading="lazy">
         </div>
         <div class="service-body">
           <span class="service-tag">Succession</span>
@@ -1077,7 +1207,7 @@ footer {
       </div>
       <div class="service-card reveal">
         <div class="service-img">
-          <img src="images/photos/nhan-hoang-j3eaegN9j_g-unsplash.jpg" alt="Locaux professionnels — bureau à vider">
+          <img src="images/photos/nhan-hoang-j3eaegN9j_g-unsplash.jpg" alt="Débarras locaux professionnels — bureau et entrepôt à vider" loading="lazy">
         </div>
         <div class="service-body">
           <span class="service-tag">Professionnel</span>
@@ -1196,7 +1326,7 @@ footer {
     </div>
     <div class="about-grid reveal">
       <div class="about-image">
-        <img src="images/camion.jpeg" alt="Camion Maison Claire Débarras — Île-de-France">
+        <img src="images/camion.jpeg" alt="Camion Maison Claire Débarras — intervention en Île-de-France" loading="lazy">
       </div>
       <div class="about-content">
         <h3>Un service de proximité, professionnel et humain</h3>
@@ -1315,6 +1445,131 @@ footer {
     </div>
   </div>
 </section>
+
+<!-- FAQ -->
+<section class="section bg-cream" id="faq">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="overline">Questions fréquentes</span>
+      <h2>Tout savoir sur le débarras</h2>
+      <p>Les réponses aux questions les plus posées par nos clients.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Combien coûte un débarras ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Le prix dépend du volume, de l'accessibilité et de la nature des objets. À titre indicatif : studio/cave 150-400€, appartement T2-T3 400-900€, maison complète 1200-3000€. Le devis est toujours gratuit et sans engagement.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Le débarras peut-il être gratuit ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Oui, si les objets ont une valeur de revente suffisante pour couvrir les frais d'intervention. C'est évalué lors du devis.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Combien de temps dure une intervention ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Quelques heures pour un studio ou une cave, une journée pour un grand appartement ou une maison. Le délai d'intervention est de 48h après acceptation du devis.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Que deviennent les objets récupérés ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Les objets en bon état sont revendus ou donnés à des associations (Emmaüs, Secours Populaire). Le reste est trié et recyclé dans le respect des normes environnementales.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Intervenez-vous dans tout Paris et l'Île-de-France ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Nous intervenons principalement dans le Val-de-Marne (94), les Hauts-de-Seine (92) et Paris. Contactez-nous pour vérifier la disponibilité dans votre secteur.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Comment se passe un débarras après succession ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Nous accompagnons les familles avec discrétion. Après un premier contact, nous proposons une visite gratuite pour évaluer le volume et les objets de valeur. L'intervention est planifiée selon vos contraintes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Schema JSON-LD : FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Combien coûte un débarras ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le prix dépend du volume, de l'accessibilité et de la nature des objets. À titre indicatif : studio/cave 150-400€, appartement T2-T3 400-900€, maison complète 1200-3000€. Le devis est toujours gratuit et sans engagement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le débarras peut-il être gratuit ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, si les objets ont une valeur de revente suffisante pour couvrir les frais d'intervention. C'est évalué lors du devis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de temps dure une intervention ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quelques heures pour un studio ou une cave, une journée pour un grand appartement ou une maison. Le délai d'intervention est de 48h après acceptation du devis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que deviennent les objets récupérés ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les objets en bon état sont revendus ou donnés à des associations (Emmaüs, Secours Populaire). Le reste est trié et recyclé dans le respect des normes environnementales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Intervenez-vous dans tout Paris et l'Île-de-France ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nous intervenons principalement dans le Val-de-Marne (94), les Hauts-de-Seine (92) et Paris. Contactez-nous pour vérifier la disponibilité dans votre secteur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment se passe un débarras après succession ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nous accompagnons les familles avec discrétion. Après un premier contact, nous proposons une visite gratuite pour évaluer le volume et les objets de valeur. L'intervention est planifiée selon vos contraintes."
+      }
+    }
+  ]
+}
+</script>
 
 <!-- CTA -->
 <section class="cta-section">
@@ -1438,7 +1693,7 @@ footer {
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="images/logo-sans-fond.png" alt="Maison Claire">
+      <img src="images/logo-sans-fond.png" alt="Maison Claire Débarras — logo">
       <p>Maison Claire Débarras — votre partenaire de confiance pour le débarras et le nettoyage en Île-de-France. Plus de 500 interventions réalisées avec soin.</p>
     </div>
     <div class="footer-col">
@@ -1524,100 +1779,122 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const item = this.parentElement;
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+    // Fermer tous les items
+    document.querySelectorAll('.faq-item').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.faq-answer').style.maxHeight = null;
+      el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+    // Ouvrir celui cliqué (si pas déjà ouvert)
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      this.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
 // ============================================
 // FORMULAIRE DE CONTACT — EmailJS + Google Sheets
 // ============================================
+// Attend le chargement du SDK EmailJS (defer)
+window.addEventListener('load', function() {
 
-// ⚠️ CONFIGURATION — Remplace ces valeurs par les tiennes
-const EMAILJS_PUBLIC_KEY = 'x4F1PFaRfSkZXVVv5';     // Ta clé publique EmailJS
-const EMAILJS_SERVICE_ID = 'service_vi7js7g';     // Ton Service ID EmailJS
-const EMAILJS_TEMPLATE_ID = 'template_l1ykr6m';    // Ton Template ID EmailJS (notification)
-const EMAILJS_TEMPLATE_CLIENT = 'template_6zmd6me'; // Template confirmation client
-const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwuTR3K989VWMPQQIfKAzy-nvWrbqVqS3OmawdcosZhVLl_eogJpK5T__MJ8cNViZJs/exec';
+  // ⚠️ CONFIGURATION
+  const EMAILJS_PUBLIC_KEY = 'x4F1PFaRfSkZXVVv5';
+  const EMAILJS_SERVICE_ID = 'service_vi7js7g';
+  const EMAILJS_TEMPLATE_ID = 'template_l1ykr6m';
+  const EMAILJS_TEMPLATE_CLIENT = 'template_6zmd6me';
+  const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwuTR3K989VWMPQQIfKAzy-nvWrbqVqS3OmawdcosZhVLl_eogJpK5T__MJ8cNViZJs/exec';
 
-// Initialisation EmailJS
-emailjs.init(EMAILJS_PUBLIC_KEY);
+  // Initialisation EmailJS
+  emailjs.init(EMAILJS_PUBLIC_KEY);
 
-// Gestion du formulaire
-document.getElementById('devisForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
+  // Gestion du formulaire
+  document.getElementById('devisForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
 
-  const btn = document.getElementById('submitBtn');
-  const msg = document.getElementById('formMessage');
-  const form = this;
+    const btn = document.getElementById('submitBtn');
+    const msg = document.getElementById('formMessage');
+    const form = this;
 
-  // Récupération des données
-  const data = {
-    nom: form.nom.value.trim(),
-    prenom: form.prenom.value.trim(),
-    telephone: form.telephone.value.trim(),
-    email: form.email.value.trim() || 'Non renseigné',
-    departement: form.departement.value,
-    type_bien: form.type_bien.value,
-    description: form.description.value.trim() || 'Aucune description',
-    date: new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })
-  };
-
-  // État loading
-  btn.disabled = true;
-  btn.textContent = 'Envoi en cours...';
-  msg.style.display = 'none';
-
-  let emailOk = false;
-  let sheetsOk = false;
-
-  // 1) Envoi EmailJS — notification + confirmation client
-  try {
-    const templateData = {
-      from_name: data.prenom + ' ' + data.nom,
-      telephone: data.telephone,
-      email: data.email,
-      departement: data.departement,
-      type_bien: data.type_bien,
-      description: data.description,
-      date: data.date
+    // Récupération des données
+    const data = {
+      nom: form.nom.value.trim(),
+      prenom: form.prenom.value.trim(),
+      telephone: form.telephone.value.trim(),
+      email: form.email.value.trim() || 'Non renseigné',
+      departement: form.departement.value,
+      type_bien: form.type_bien.value,
+      description: form.description.value.trim() || 'Aucune description',
+      date: new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })
     };
-    // Email notification (pour ton cousin)
-    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateData);
-    // Email confirmation (pour le client, seulement s'il a donné son email)
-    if (data.email !== 'Non renseigné') {
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CLIENT, templateData);
+
+    // État loading
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours...';
+    msg.style.display = 'none';
+
+    let emailOk = false;
+    let sheetsOk = false;
+
+    // 1) Envoi EmailJS — notification + confirmation client
+    try {
+      const templateData = {
+        from_name: data.prenom + ' ' + data.nom,
+        telephone: data.telephone,
+        email: data.email,
+        departement: data.departement,
+        type_bien: data.type_bien,
+        description: data.description,
+        date: data.date
+      };
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateData);
+      if (data.email !== 'Non renseigné') {
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CLIENT, templateData);
+      }
+      emailOk = true;
+    } catch (err) {
+      console.error('EmailJS error:', err);
     }
-    emailOk = true;
-  } catch (err) {
-    console.error('EmailJS error:', err);
-  }
 
-  // 2) Envoi Google Sheets
-  try {
-    const params = new URLSearchParams();
-    Object.entries(data).forEach(([key, val]) => params.append(key, val));
-    await fetch(GOOGLE_SHEETS_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      body: params
-    });
-    sheetsOk = true;
-  } catch (err) {
-    console.error('Google Sheets error:', err);
-  }
+    // 2) Envoi Google Sheets
+    try {
+      const params = new URLSearchParams();
+      Object.entries(data).forEach(([key, val]) => params.append(key, val));
+      await fetch(GOOGLE_SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: params
+      });
+      sheetsOk = true;
+    } catch (err) {
+      console.error('Google Sheets error:', err);
+    }
 
-  // Résultat
-  if (emailOk || sheetsOk) {
-    msg.style.display = 'block';
-    msg.style.background = '#e8f5e9';
-    msg.style.color = '#2e7d32';
-    msg.innerHTML = '✓ <strong>Demande envoyée avec succès !</strong><br>Nous vous recontactons sous 24h.';
-    form.reset();
-  } else {
-    msg.style.display = 'block';
-    msg.style.background = '#fce4ec';
-    msg.style.color = '#c62828';
-    msg.innerHTML = '✗ <strong>Erreur lors de l\'envoi.</strong><br>Veuillez nous appeler au <a href="tel:+33786781055" style="color:#c62828;font-weight:700">07 86 78 10 55</a>';
-  }
+    // Résultat
+    if (emailOk || sheetsOk) {
+      msg.style.display = 'block';
+      msg.style.background = '#e8f5e9';
+      msg.style.color = '#2e7d32';
+      msg.innerHTML = '✓ <strong>Demande envoyée avec succès !</strong><br>Nous vous recontactons sous 24h.';
+      form.reset();
+    } else {
+      msg.style.display = 'block';
+      msg.style.background = '#fce4ec';
+      msg.style.color = '#c62828';
+      msg.innerHTML = '✗ <strong>Erreur lors de l\'envoi.</strong><br>Veuillez nous appeler au <a href="tel:+33786781055" style="color:#c62828;font-weight:700">07 86 78 10 55</a>';
+    }
 
-  btn.disabled = false;
-  btn.textContent = 'Envoyer ma demande de devis →';
+    btn.disabled = false;
+    btn.textContent = 'Envoyer ma demande de devis →';
+  });
 });
 </script>
 

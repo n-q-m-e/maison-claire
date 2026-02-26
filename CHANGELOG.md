@@ -1,5 +1,23 @@
 # Changelog — Maison Claire
 
+## [1.2.0] — 2026-02-26
+
+### Ajouté
+- **SEO : Balises meta** — description, keywords, Open Graph, Twitter Card
+- **SEO : Lien canonique** vers https://www.maisonclairedebarras.com/
+- **SEO : Schemas JSON-LD** — LocalBusiness, Service, FAQPage
+- **Section FAQ** visible avec accordéon (6 questions/réponses) entre Avis et CTA
+- **Lien FAQ** dans la navigation principale
+- **sitemap.xml** et **robots.txt** à la racine du projet
+- **Preload** de la font Google Fonts + preconnect vers fonts.gstatic.com
+
+### Optimisé
+- `loading="lazy"` sur toutes les images sauf logo et hero
+- `defer` sur le script EmailJS
+- Attributs `alt` enrichis avec mots-clés SEO sur toutes les images
+
+---
+
 ## [1.1.0] — 2026-02-25
 
 ### Ajouté
