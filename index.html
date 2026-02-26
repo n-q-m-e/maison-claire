@@ -1590,11 +1590,11 @@ document.getElementById('devisForm').addEventListener('submit', async function(e
 
   // 2) Envoi Google Sheets
   try {
+    const formData = new FormData();
+    Object.entries(data).forEach(([key, val]) => formData.append(key, val));
     await fetch(GOOGLE_SHEETS_URL, {
       method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+      body: formData
     });
     sheetsOk = true;
   } catch (err) {
