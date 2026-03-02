@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/logo-sans-fond.png" alt="Maison Claire Débarras" width="200">
+  <img src="images/logo.jpg" alt="Maison Claire Débarras" width="200">
 </p>
 
 <h1 align="center">Maison Claire Débarras</h1>
