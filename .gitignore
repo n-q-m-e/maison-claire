@@ -1,0 +1,16 @@
+# Documentation interne / notes
+PROMPT-SEO-TECHNIQUE.md
+Recherche-SEO-Prospection-B2B.md
+Strategie-Maison-Claire.pdf
+generate_strategie_pdf.py
+CHANGELOG.md
+ROADMAP.md
+CONFIG-FORMULAIRE.md
+GUIDE-GOOGLE-SHEETS.md
+
+# Templates EmailJS (copies de référence)
+emailjs-template.html
+emailjs-template-confirmation-client.html
+
+# Claude
+.claude/settings.local.json
