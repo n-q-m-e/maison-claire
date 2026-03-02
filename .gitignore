@@ -13,4 +13,5 @@ emailjs-template.html
 emailjs-template-confirmation-client.html
 
 # Claude
+CLAUDE.md
 .claude/settings.local.json
